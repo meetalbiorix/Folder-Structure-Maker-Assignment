@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <h1>FOLDER STRUCTURE</h1>
+      <folder-structure />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+import { ref, onMounted } from 'vue'
+import FolderStructure from '@/components/FolderStructure.vue'
+
+const count = ref(0)
+
+onMounted(() => {
+  console.log(`The initial count is ${count.value}.`)
+})
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+
+h1 {
+
+  background: black;
+  color: white;
+  padding: 20px ;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+button {
+  color: white;
+  background: black;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 </style>
+
+
+
